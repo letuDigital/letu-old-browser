@@ -1,0 +1,22 @@
+html, body, div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #111;
+  color: #fff;
+}
+img {
+  display: inline-block;
+}
+
+.modern-browser-alert {
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
