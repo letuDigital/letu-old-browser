@@ -1,9 +1,10 @@
 {
   "name": "letu-old-browser",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "work": "vite",
-    "build": "vite build && npm run rollupBuild && npm run cleanDist",
+    "build": "npm run viteBuild && npm run rollupBuild && npm run cleanDist",
+    "viteBuild": "vite build",
     "rollupBuild": "rollup -c",
     "cleanDist": "rimraf dist",
     "lint": "eslint . --ext .js,.vue --ignore-path .gitignore",
@@ -12,13 +13,13 @@
   "main": "old-browser.js",
   "browserslist": [
     "defaults",
-    "not IE 7"
+    "IE 7"
   ],
   "devDependencies": {
+    "@babel/preset-env": "^7.15.0",
     "@rollup/plugin-babel": "^5.3.0",
     "autoprefixer": "^10.3.1",
     "babel-eslint": "^10.1.0",
-    "babel-plugin-transform-html-import-to-string": "^1.0.0",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
@@ -29,6 +30,7 @@
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.53.3",
+    "rollup-plugin-string": "^3.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "vite": "^2.4.3",
     "vite-plugin-html": "^2.0.7",

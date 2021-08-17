@@ -11,11 +11,6 @@ module.exports = {
     amd: true,
     es6: true
   },
-  globals: {
-    ko: true,
-    $: true,
-    $data: true
-  },
   extends: ['standard', 'prettier', 'plugin:prettier/recommended'],
   rules: {
     'prettier/prettier': 'error',
