@@ -1,6 +1,6 @@
 {
   "name": "letu-old-browser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "work": "vite",
     "build": "npm run viteBuild && npm run rollupBuild && npm run cleanDist",
@@ -35,5 +35,15 @@
     "vite": "^2.4.3",
     "vite-plugin-html": "^2.0.7",
     "vite-plugin-singlefile": "^0.5.1"
-  }
+  },
+  "description": "Generate es5 script to show deprecation message for deprecated browsers to prevent negative experience for users",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/letuDigital/letu-old-browser.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/letuDigital/letu-old-browser/issues"
+  },
+  "homepage": "https://github.com/letuDigital/letu-old-browser#readme"
 }
