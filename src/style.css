@@ -7,11 +7,21 @@ html, body, div {
 }
 
 body {
-  background: #111;
-  color: #fff;
+  background: #fff;
+  color: #111;
 }
 img {
   display: inline-block;
+  margin-bottom: 20px;
+}
+
+a, a:visited {
+  color: #000;
+  text-decoration: underline;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
 }
 
 .modern-browser-alert {
