@@ -15,10 +15,12 @@ const isModern = () => {
     resp = false;
   }
 
-  // check load app
+  // check spred operator
   if (resp) {
-    var elemId = document.getElementById("app");
-    if (elemId !== null) {
+    try {
+      // eslint-disable-next-line no-new-func
+      Function('let k = { l: 1 };k = {...k};');
+    } catch (e) {
       resp = false;
     }
   }
