@@ -62,9 +62,9 @@ const loadInstana = () => {
   window.ineum('reportEvent', 'error.oldBrowser');
 };
 
-setTimeout(() => {
-  if (!isModern()) {
+if (!isModern()) {
+  setTimeout(() => {
     document.write(template);
     loadInstana();
-  }
-}, 3000);
+  }, 1);
+}
