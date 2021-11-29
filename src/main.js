@@ -5,13 +5,25 @@ import template from '../dist/index.html';
  * @returns {boolean}
  */
 const isModern = () => {
+  let resp = true;
+
+  // check old browser
   try {
     // eslint-disable-next-line no-new-func
     Function('() => {};');
-    return true;
   } catch (e) {
-    return false;
+    resp = false;
   }
+
+  // check load app
+  if (resp) {
+    var elemId = document.getElementById("app");
+    if (elemId !== null) {
+      resp = false;
+    }
+  }
+
+  return resp;
 };
 
 /**
@@ -23,13 +35,13 @@ const loadInstana = () => {
     s[t] ||
       // eslint-disable-next-line no-sequences
       ((s[t] = a),
-      (n = s[a] =
-        function () {
-          n.q.push(arguments);
-        }),
-      (n.q = []),
-      (n.v = 2),
-      (n.l = 1 * new Date()));
+        (n = s[a] =
+          function () {
+            n.q.push(arguments);
+          }),
+        (n.q = []),
+        (n.v = 2),
+        (n.l = 1 * new Date()));
   })(window, 'InstanaEumObject', 'ineum');
 
   window.ineum('reportingUrl', 'https://eum-green-saas.instana.io');
@@ -48,9 +60,9 @@ const loadInstana = () => {
   window.ineum('reportEvent', 'error.oldBrowser');
 };
 
-if (!isModern()) {
-  setTimeout(() => {
+setTimeout(() => {
+  if (!isModern()) {
     document.write(template);
     loadInstana();
-  }, 1);
-}
+  }
+}, 3000);
