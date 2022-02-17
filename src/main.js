@@ -25,27 +25,12 @@ const isModern = () => {
     }
   }
 
-  // check class private property
+  // check globalThis
   if (resp) {
     try {
       // eslint-disable-next-line no-new-func
-      Function("class AA { #f = 1;}");
+      Function(`let k = globalThis;`)();
     } catch (e) {
-      resp = false;
-    }
-  }
-
-  // check Promise.allSettled
-  if (resp) {
-    try {
-      // eslint-disable-next-line no-new-func
-      Function(`const p1 = Promise.resolve(1);
-      const p2 = Promise.resolve(1);
-      const p = [p1, p2];
-      Promise.allSettled(p).then((results) => {});
-      `)();
-    } catch (e) {
-      console.error("promise");
       resp = false;
     }
   }
@@ -62,13 +47,13 @@ const loadInstana = () => {
     s[t] ||
       // eslint-disable-next-line no-sequences
       ((s[t] = a),
-        (n = s[a] =
-          function () {
-            n.q.push(arguments);
-          }),
-        (n.q = []),
-        (n.v = 2),
-        (n.l = 1 * new Date()));
+      (n = s[a] =
+        function () {
+          n.q.push(arguments);
+        }),
+      (n.q = []),
+      (n.v = 2),
+      (n.l = 1 * new Date()));
   })(window, 'InstanaEumObject', 'ineum');
 
   window.ineum('reportingUrl', 'https://eum-green-saas.instana.io');

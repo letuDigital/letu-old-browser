@@ -1,13 +1,13 @@
 {
   "name": "letu-old-browser",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "scripts": {
     "work": "vite",
     "build": "npm run viteBuild && npm run rollupBuild && npm run cleanDist",
     "viteBuild": "vite build",
     "rollupBuild": "rollup -c",
     "cleanDist": "rimraf dist",
-    "lint": "eslint . --ext .js,.vue --ignore-path .gitignore",
+    "lint": "eslint . --ext .js,.vue --ignore-path .gitignore --ignore-pattern old-browser.js",
     "lintfix": "npm run lint -- --fix"
   },
   "main": "old-browser.js",

@@ -6,13 +6,13 @@ html, body, div {
   font-family: Arial, sans-serif;
 }
 
-body {
-  background: #fff;
-  color: #111;
+html, body {
+  height: 100%;
 }
-img {
-  display: inline-block;
-  margin-bottom: 20px;
+
+body {
+  background: #F9F9F9;
+  color: #111;
 }
 
 a, a:visited {
@@ -29,4 +29,143 @@ a:focus {
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
+}
+
+.content__wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.content__wrapper:before,
+.content__wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  z-index: -1;
+}
+
+.content__wrapper:before {
+  left: 0;
+  background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_left.jpg");
+  background-position: 0 100%;
+  display: none;
+}
+.content__wrapper:after {
+  right: 0;
+  background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_right.jpg");
+  background-position: 100% 0;
+}
+
+.content__center {
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.content__logo {
+  width: 205px;
+  height: 28px;
+  display: block;
+  margin: 0 auto;
+}
+
+.content__title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  margin-top: 25%;
+}
+
+.content__text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.link-list {
+  margin-top: 40px;
+}
+
+.link-list a {
+  width: 120px;
+  display: block;
+  text-align: left;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+  line-height: 32px;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.link-list a img {
+  display: inline-block;
+  vertical-align: top;
+  height: 32px;
+  padding-right: 5px;
+}
+
+.link-list a:hover span,
+.link-list a:focus span {
+  text-decoration: underline;
+}
+
+.link-list span {
+  display: inline-block;
+}
+
+@media only screen and (min-width: 900px) {
+  .content__logo {
+    margin: 0;
+  }
+  .content__wrapper:before,
+  .content__wrapper:after {
+    width: 50%;
+  }
+  .content__wrapper:before {
+    display: block;
+  }
+
+  .content__center {
+    padding: 10% 0 0 0;
+    margin: 0 auto;
+    width: 450px;
+  }
+
+  .content__title {
+    font-size: 48px;
+    line-height: 55px;
+    margin-top: 70px;
+  }
+
+  .content__text {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .content__center {
+    padding: 10% 0 0 0;
+    margin: 0 auto;
+    background-image: none;
+    height: auto;
+    width: 590px;
+  }
+
+  .content__title {
+    font-size: 48px;
+    line-height: 55px;
+    margin-top: 60px;
+  }
+
+  .content__text {
+    font-size: 16px;
+    line-height: 25px;
+  }
 }
