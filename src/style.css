@@ -6,6 +6,10 @@ html, body, div {
   font-family: Arial, sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: #F9F9F9;
   color: #111;
@@ -27,28 +31,40 @@ a:focus {
   text-align: center;
 }
 
+.content__wrapper {
+  height: 100%;
+  position: relative;
+}
 
-.content__center {
-  padding: 20px;
-  background-image: url("./img_right.jpg");
+.content__wrapper:before,
+.content__wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
-  height: 100vh;
-  background-position-x:right;
-  width: auto;
+  background-position: 0 0;
+  z-index: -1;
 }
 
-.content__left {
+.content__wrapper:before {
+  left: 0;
+  background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_left.jpg");
+  background-position: 0 100%;
   display: none;
 }
-
-.content__right {
-  display: none;
+.content__wrapper:after {
+  right: 0;
+  background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_right.jpg");
+  background-position: 100% 0;
 }
 
 .content__center {
   margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
+  position: relative;
 }
 
 .content__logo {
@@ -75,29 +91,49 @@ a:focus {
   margin-top: 40px;
 }
 
-.link-list__item {
-  width: 80px;
+.link-list a {
+  width: 120px;
   display: block;
-  text-align: center;
+  text-align: left;
   float: left;
-  margin-right: 10px;;
+  margin-right: 10px;
+  margin-top: 10px;
+  line-height: 32px;
+  vertical-align: middle;
+  text-decoration: none;
 }
 
-.link-list__ico {
-  display: inline;
+.link-list a img {
+  display: inline-block;
+  vertical-align: top;
+  height: 32px;
+  padding-right: 5px;
+}
+
+.link-list a:hover span,
+.link-list a:focus span {
+  text-decoration: underline;
+}
+
+.link-list span {
+  display: inline-block;
 }
 
 @media only screen and (min-width: 900px) {
   .content__logo {
     margin: 0;
   }
+  .content__wrapper:before,
+  .content__wrapper:after {
+    width: 50%;
+  }
+  .content__wrapper:before {
+    display: block;
+  }
 
   .content__center {
-    padding: 0px;
+    padding: 10% 0 0 0;
     margin: 0 auto;
-    padding-top: 10%;
-    background-image: none;
-    height: auto;
     width: 450px;
   }
 
@@ -111,35 +147,12 @@ a:focus {
     font-size: 16px;
     line-height: 25px;
   }
-
-  .content__left {
-    float: left;
-    width: 25%;
-    display: block;
-    background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_left.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-y: center;
-    height: 100vh;
-  }
-
-  .content__right {
-    float: right;
-    width: 25%;
-    display: block;
-    background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_right.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-y: center;
-    height: 100vh;
-  }
 }
 
 @media only screen and (min-width: 1024px) {
   .content__center {
-    padding: 0px;
+    padding: 10% 0 0 0;
     margin: 0 auto;
-    padding-top: 10%;
     background-image: none;
     height: auto;
     width: 590px;
@@ -154,13 +167,5 @@ a:focus {
   .content__text {
     font-size: 16px;
     line-height: 25px;
-  }
-
-  .content__left {
-    width: 20%;
-  }
-
-  .content__right {
-    width: 20%;
   }
 }

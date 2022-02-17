@@ -7,7 +7,7 @@
     "viteBuild": "vite build",
     "rollupBuild": "rollup -c",
     "cleanDist": "rimraf dist",
-    "lint": "eslint . --ext .js,.vue --ignore-path .gitignore",
+    "lint": "eslint . --ext .js,.vue --ignore-path .gitignore --ignore-pattern old-browser.js",
     "lintfix": "npm run lint -- --fix"
   },
   "main": "old-browser.js",
