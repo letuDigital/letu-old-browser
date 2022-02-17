@@ -5,6 +5,15 @@
   <meta charset="UTF-8"/>
   <title>Обновите ваш браузер</title>
   <link rel="stylesheet" href="./style.css"/>
+  <script>
+    /* eslint-disable no-var */
+    var imgNumber = Math.floor(Math.random() * 5) + 1;
+
+    document.head.insertAdjacentHTML(
+      'beforeend',
+      '<style>.content__wrapper:before {background-image: url("https://i.letu.ru/common/img/site/oldbrowser/' + imgNumber + '_desktop_left.png");}.content__wrapper:after {background-image: url("https://i.letu.ru/common/img/site/oldbrowser/' + imgNumber + '_mob.png");}@media only screen and (min-width: 900px) {.content__wrapper:after {background-image: url("https://i.letu.ru/common/img/site/oldbrowser/' + imgNumber + '_desktop_right.png");}}</style>'
+    );
+  </script>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
 </head>
 
@@ -13,7 +22,7 @@
     <div class="content__center">
 
       <img class="content__logo" src="https://www.letu.ru/common/img/logo/logo-black.svg" alt="Л'Этуаль"/>
-    <div class="content__title">Обновите ваш браузер</div>
+      <div class="content__title">Обновите ваш браузер</div>
       <div class="content_text">
         <p>
           Этот браузер не соответствует стандартам безопасности Л'Этуаль, поэтому мы его больше не поддерживаем.

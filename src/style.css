@@ -24,13 +24,6 @@ a:focus {
   text-decoration: none;
 }
 
-.modern-browser-alert {
-  padding: 30px;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .content__wrapper {
   height: 100%;
   position: relative;
@@ -51,40 +44,35 @@ a:focus {
 
 .content__wrapper:before {
   left: 0;
-  background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_left.jpg");
-  background-position: 0 100%;
+  /*background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_left.jpg");*/
+  background-position: 0 0;
   display: none;
 }
 .content__wrapper:after {
   right: 0;
-  background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_right.jpg");
+  /*background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_right.jpg");*/
   background-position: 100% 0;
 }
 
 .content__center {
   margin: 0 auto;
   padding: 20px;
+  max-width: 320px;
   position: relative;
 }
 
 .content__logo {
-  width: 205px;
-  height: 28px;
+  max-width: 205px;
   display: block;
   margin: 0 auto;
 }
 
 .content__title {
   font-size: 30px;
-  line-height: 36px;
+  line-height: 1.42;
+  margin-bottom: 1em;
   font-weight: 600;
   margin-top: 25%;
-}
-
-.content__text {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
 }
 
 .link-list {
@@ -110,9 +98,12 @@ a:focus {
   padding-right: 5px;
 }
 
+.link-list a span {
+  text-decoration: underline;
+}
 .link-list a:hover span,
 .link-list a:focus span {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .link-list span {
@@ -123,49 +114,34 @@ a:focus {
   .content__logo {
     margin: 0;
   }
+
   .content__wrapper:before,
   .content__wrapper:after {
     width: 50%;
   }
+
   .content__wrapper:before {
     display: block;
   }
 
+  .content__wrapper:after {
+    /*background-image: url("https://i.letu.ru/common/img/site/oldbrowser/img_right.jpg");*/
+  }
+
   .content__center {
     padding: 10% 0 0 0;
     margin: 0 auto;
-    width: 450px;
+    max-width: 600px;
   }
 
   .content__title {
-    font-size: 48px;
-    line-height: 55px;
+    font-size: 40px;
     margin-top: 70px;
-  }
-
-  .content__text {
-    font-size: 16px;
-    line-height: 25px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .content__center {
-    padding: 10% 0 0 0;
-    margin: 0 auto;
-    background-image: none;
-    height: auto;
-    width: 590px;
-  }
-
   .content__title {
     font-size: 48px;
-    line-height: 55px;
-    margin-top: 60px;
-  }
-
-  .content__text {
-    font-size: 16px;
-    line-height: 25px;
   }
 }
