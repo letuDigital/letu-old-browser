@@ -1,6 +1,6 @@
 {
   "name": "letu-old-browser",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "scripts": {
     "work": "vite",
     "build": "npm run viteBuild && npm run rollupBuild && npm run cleanDist",
