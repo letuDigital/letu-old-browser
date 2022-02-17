@@ -76,15 +76,25 @@ a:focus {
 }
 
 .link-list__item {
-  width: 80px;
-  display: block;
   text-align: center;
+  margin-right: 20px;
+  display: block;
   float: left;
-  margin-right: 10px;;
 }
 
 .link-list__ico {
-  display: inline;
+  display: block;
+  float: left;
+}
+.link-list__text {
+  display: block;
+  float: left;
+  margin-left: 10px;
+  margin-top: 7px;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 900px) {
